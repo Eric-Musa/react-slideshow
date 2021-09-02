@@ -1,7 +1,17 @@
 {
-  "name": "slideshow-publish",
+  "name": "react-slideshow",
   "version": "0.1.0",
-  "private": true,
+  "description": "A Slideshow React component with many customizable properties (and a few sample images)",
+  "author": "Eric-Musa",
+  "keywords": ["react", "component", "ui", "slideshow", "carousel", "responsive"],
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eric-Musa/react-slideshow.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

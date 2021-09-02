@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../../static/styling/slideshow.scss";
+import "./styling/slideshow.css";
 import useWindowDimensions from "./windowDimension";
 /**
  * Slideshow component
@@ -22,7 +22,7 @@ export default function Slideshow({
     initIndex
   } = props;
   const nPics = imNamesAndAltTexts.length;
-  const [index, setIndex] = useState(initIndex == 'random' ? Math.floor(Math.random() * imNamesAndAltTexts.length) : initIndex);
+  const [index, setIndex] = useState(initIndex === 'random' ? Math.floor(Math.random() * imNamesAndAltTexts.length) : initIndex);
   const {
     height,
     width
@@ -31,10 +31,6 @@ export default function Slideshow({
     intervalID: null,
     timeoutID: null
   });
-  useEffect(() => {
-    setSlideshowInterval();
-    return () => timer.current.intervalID = clearInterval(timer.current.intervalID);
-  }, []);
 
   function setSlideshowInterval() {
     timer.current.intervalID = setInterval(() => setIndex(prevIndex => (prevIndex + 1) % 6), interval);
@@ -54,15 +50,15 @@ export default function Slideshow({
   function getSlideType(i) {
     const valDiff = i - index;
 
-    if (valDiff == -2 || valDiff - nPics == -2) {
+    if (valDiff === -2 || valDiff - nPics === -2) {
       return "farLeftSlide";
-    } else if (valDiff == -1 || valDiff - nPics == -1) {
+    } else if (valDiff === -1 || valDiff - nPics === -1) {
       return "nearLeftSlide";
-    } else if (valDiff == 0) {
+    } else if (valDiff === 0) {
       return "centerSlide";
-    } else if (valDiff == 1 || valDiff + nPics == 1) {
+    } else if (valDiff === 1 || valDiff + nPics === 1) {
       return "nearRightSlide";
-    } else if (valDiff == 2 || valDiff + nPics == 2) {
+    } else if (valDiff === 2 || valDiff + nPics === 2) {
       return "farRightSlide";
     } else {
       return "hiddenSlide";
@@ -77,6 +73,10 @@ export default function Slideshow({
     return Math.min(width, maxWidth);
   }
 
+  useEffect(() => {
+    setSlideshowInterval();
+    return () => timer.current.intervalID = clearInterval(timer.current.intervalID);
+  }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "slideshow-container",
     style: {
@@ -89,7 +89,7 @@ export default function Slideshow({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "slideshow",
-    onChange: e => clicked(e)
+    onChange: clicked
   }, imNamesAndAltTexts.map(([imgName, altText], i) => /*#__PURE__*/React.createElement("label", {
     className: "slide " + getSlideType(i) // << this styles each slide by className according to SCSS styling
     ,
@@ -105,7 +105,7 @@ export default function Slideshow({
     value: i,
     checked: index === i
   }), /*#__PURE__*/React.createElement("img", {
-    src: "/static/images/" + imgName,
+    src: imgName,
     alt: altText
   })))));
 }
