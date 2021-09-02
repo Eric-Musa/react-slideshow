@@ -1,6 +1,6 @@
 `<Slideshow props={<slideshowProps>}>` is a *React* component usable as an animated, responsive image carousel. 
 
-There's many possible improvements - any suggestions are welcome!
+There's many possible improvements - any suggestions are welcome on <a href="https://github.com/Eric-Musa/react-slideshow.git">*Github*</a>!
 
 
 Usage is as follows within a *React* Component:
