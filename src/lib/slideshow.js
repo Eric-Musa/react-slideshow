@@ -2,13 +2,46 @@ import React, { useState, useEffect, useRef } from "react";
 import "./styling/slideshow.css";
 import useWindowDimensions from "./windowDimension";
 
+import flowers1 from "./sample_images/flowers1.jpg"
+import flowers2 from "./sample_images/flowers2.jpg"
+import flowers3 from "./sample_images/flowers3.jpg"
+import flowers4 from "./sample_images/flowers4.jpg"
+import goose from "./sample_images/goose.jpg"
+import peaches from "./sample_images/peaches.jpg"
+import prairiedogs from "./sample_images/prairiedogs.jpg"
 
+
+export function getDefaultSlideshowProps () {
+    
+    const slideshowImNamesAndAltTexts = [
+        [flowers1, "Pretty pink and purple flowers."],
+        [flowers2, "Pretty orange flowers."],
+        [flowers3, "Pretty red flowers."],
+        [flowers4, "A pretty pink flower with a butterfly on it."],
+        [goose, "A goose spotted along a rocky bank."],
+        [peaches, "Some peaches growing on a tree."],
+        [prairiedogs, "Two prairie dogs popping out of their burrow."],
+    ];
+
+    return {
+        imNamesAndAltTexts: slideshowImNamesAndAltTexts,
+        interval: 4000,
+        aspectRatio: 16/9,
+        heightPercent: "85%",
+        maxHeight: 720,
+        maxWidth: 1600,
+        margin: 20,
+        transitionTime: 1.25,
+        clickFactor: 1.5,
+        initIndex: 'random'
+    }
+}
 
 /**
  * Slideshow component
  * 
  */
-export default function Slideshow ({ props }) {
+export function Slideshow ({ props }) {
     const {imNamesAndAltTexts, interval, heightPercent, aspectRatio, 
         maxHeight, maxWidth, margin, transitionTime, clickFactor, initIndex} = props
     const nPics = imNamesAndAltTexts.length
