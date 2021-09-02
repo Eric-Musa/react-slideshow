@@ -1,4 +1,4 @@
-import { Slideshow, getDefaultSlideshowProps } from "./lib/slideshow"
+import { Slideshow, getDefaultSlideshowProps } from "./lib"
 
 const slideshowProps = getDefaultSlideshowProps()
 

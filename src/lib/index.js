@@ -1,4 +1,3 @@
-import { getDefaultProps } from "./slideshow";
-import Slideshow from "./slideshow";
+import { Slideshow, getDefaultSlideshowProps } from "./slideshow";
 
-export { Slideshow, getDefaultProps }
+export { Slideshow, getDefaultSlideshowProps }

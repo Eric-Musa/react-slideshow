@@ -1,6 +1,6 @@
 {
   "name": "reactjs-slideshow",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A Slideshow React component with many customizable properties (and a few sample images)",
   "author": "Eric-Musa",
   "keywords": ["react", "component", "ui", "slideshow", "carousel", "responsive"],

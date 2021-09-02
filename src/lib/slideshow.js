@@ -11,7 +11,7 @@ import peaches from "./sample_images/peaches.jpg"
 import prairiedogs from "./sample_images/prairiedogs.jpg"
 
 
-export function getDefaultSlideshowProps () {
+function getDefaultSlideshowProps () {
     
     const slideshowImNamesAndAltTexts = [
         [flowers1, "Pretty pink and purple flowers."],
@@ -41,7 +41,7 @@ export function getDefaultSlideshowProps () {
  * Slideshow component
  * 
  */
-export function Slideshow ({ props }) {
+function Slideshow ({ props }) {
     const {imNamesAndAltTexts, interval, heightPercent, aspectRatio, 
         maxHeight, maxWidth, margin, transitionTime, clickFactor, initIndex} = props
     const nPics = imNamesAndAltTexts.length
@@ -127,3 +127,5 @@ export function Slideshow ({ props }) {
     );
     
 }
+
+export { Slideshow, getDefaultSlideshowProps }
