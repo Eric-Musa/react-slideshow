@@ -8,7 +8,8 @@ import flowers4 from "./sample_images/flowers4.jpg";
 import goose from "./sample_images/goose.jpg";
 import peaches from "./sample_images/peaches.jpg";
 import prairiedogs from "./sample_images/prairiedogs.jpg";
-export function getDefaultSlideshowProps() {
+
+function getDefaultSlideshowProps() {
   const slideshowImNamesAndAltTexts = [[flowers1, "Pretty pink and purple flowers."], [flowers2, "Pretty orange flowers."], [flowers3, "Pretty red flowers."], [flowers4, "A pretty pink flower with a butterfly on it."], [goose, "A goose spotted along a rocky bank."], [peaches, "Some peaches growing on a tree."], [prairiedogs, "Two prairie dogs popping out of their burrow."]];
   return {
     imNamesAndAltTexts: slideshowImNamesAndAltTexts,
@@ -28,7 +29,8 @@ export function getDefaultSlideshowProps() {
  * 
  */
 
-export function Slideshow({
+
+function Slideshow({
   props
 }) {
   const {
@@ -131,3 +133,5 @@ export function Slideshow({
     alt: altText
   })))));
 }
+
+export { Slideshow, getDefaultSlideshowProps };
